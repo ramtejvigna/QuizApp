@@ -1,0 +1,20 @@
+.categories {
+    margin-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(auto-fit, 1fr);
+    gap: 50px;
+}
+.categories div {
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    padding: 70px 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 2px 4px rgb(87, 87, 87);
+    transition: all 0.2s ease-in-out;
+}
+.categories div:hover {
+    transform: scale(1.1);
+}
