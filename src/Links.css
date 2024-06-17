@@ -1,0 +1,12 @@
+body {
+    display: flex;
+    align-items: center;
+}
+
+.links,
+.start-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

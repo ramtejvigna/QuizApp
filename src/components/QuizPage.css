@@ -1,31 +1,67 @@
-.categories {
+body {
+    padding: 20px;
+}
+
+.category-wrapper {
     margin-top: 50px;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(auto-fit, 1fr);
     gap: 50px;
 }
-.categories div {
+.category div button {
+    background: transparent;
     display: flex;
     place-items: center;
+    width: 23rem;
+    height: 15rem;
+    background-color: rgba(36, 36, 36, 0.176);
     justify-content: center;
     padding: 70px 100px;
     border-radius: 10px;
     backdrop-filter: blur(40px);
     cursor: pointer;
-    box-shadow: 0 1px 5px 3px rgba(144, 144, 144, 0.525);
+    box-shadow: 0 1px 5px 3px #02818f;
     transition: all 0.2s ease-in-out;
 }
-.categories h2 {
+.category h2 {
     color: white;
+    font-size: 28px;
 }
-.categories div:hover {
+.category div button:hover {
     transform: scale(1.1);
+    border-color: #00e5ff;
 }
 .title {
-    background-color: rgb(255, 255, 255);
     border-radius: 20px;
     color: black;
-    font-size: 20px;
-    padding: 10px 0;
+    font-weight: 800;
+    font-size: 24px;
+    padding: 20px 150px;
+    border: rgb(0, 170, 255);
+    background: linear-gradient(to right, #aff3ff, #02818f);
+}
+.go-back {
+    margin: 20px;
+    border-radius: 16px;
+    padding: 20px 20px;
+    color: black;
+    position:relative;
+    float: right;
+    font-weight: 800;
+    transition: all 0.4s ease-in-out;
+    background: linear-gradient(to right, #aff3ff, #02818f);
+
+}
+.go-back:hover {
+    background: linear-gradient(to left, #aff3ff, #02818f);
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    place-items: center;
+    margin: 40px 0;
+}
+.go-back button {
+    background-color: transparent;
 }
