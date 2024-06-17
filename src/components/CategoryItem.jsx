@@ -1,19 +1,21 @@
-import React from 'react'
-import './QuizPage.css'
-  
-function CategoryItem(props) {
-    
+import React from "react";
+import "./QuizPage.css";
+import { Link } from "react-router-dom";
+
+function CategoryItem({ category, name }) {
   return (
-    <> 
-        <div className="category">
-          <div>
-            <button>
-                <h2>{props.name}</h2>
-            </button>
-          </div>
+    <>
+      <div className="category">
+        <div>
+        <Link to={`/quizzes/${category}`}>
+          <button>
+              <h2>{name}</h2>    
+          </button>
+        </Link>
         </div>
+      </div>
     </>
-  )
+  );
 }
 
-export default CategoryItem
+export default CategoryItem;

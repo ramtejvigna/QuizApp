@@ -1,11 +1,43 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import App from "./App.jsx";
 import "./index.css";
-import { BrowserRouter } from "react-router-dom";
+import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import Home from './components/Home.jsx'
+import Layout from './components/Layout.jsx'
+import QuizPage from './components/QuizPage.jsx'
+import HighScore from './components/HighScore.jsx'
+import QuizQuestions from "./components/QuizQuestions.jsx";
+
+// const router = createBrowserRouter([
+//   {
+//     path: '/',
+//     element: <Layout />,
+//     children: [
+//       {
+//         path: "",
+//         element: <Home />
+//       },
+//       {
+//         path: '/quiz',
+//         element: <QuizPage />
+//       }
+//     ]
+//   }
+// ])
+
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path='/' element={<Layout />} >
+      <Route index element={<Home />} />
+      <Route path='quiz' element={<QuizPage />} />
+      <Route path="highScore" element={<HighScore />}/>
+      <Route path='/quizzes/:categoryId' element={<QuizQuestions />} />
+    </Route>
+  )
+)
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
+    <React.StrictMode>
+      <RouterProvider router={router}/>
+    </React.StrictMode>
 );

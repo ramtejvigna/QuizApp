@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 export default function QuizPage() {
   // useState hook for assigning the categories which we got from the API URL
   const [categories, setCategories] = useState([]);
+  const [loading,setLoading] = useState(true);
 
   // The useEffect hook is used to perform side effects in functional components.
   // The effect runs after every render if the dependencies have changed.
@@ -17,6 +18,7 @@ export default function QuizPage() {
       let data = await fetch(url);
       let parseData = await data.json();
       setCategories(parseData.trivia_categories);
+      setLoading(false);
     }
     fetchCategory();
   }, []); // An empty array [] means the effect runs only once after the initial render
@@ -28,13 +30,16 @@ export default function QuizPage() {
           </div>
           <div className="category-wrapper">
             {/* Using map() method for iterating through the categories present. */}
-            {categories.map((e) => {
+            {loading ? (
+              <h2>Loading...</h2>
+            )
+            : (categories.map((e) => {
               return (
                 <div key={e.id}>
-                  <CategoryItem name={e.name} /> {/* We send the 'name' as a prop to CategoryItem component */}
+                  <CategoryItem name={e.name} category={e.id} /> {/* We send the 'name' as a prop to CategoryItem component */}
                 </div>
               );
-            })}
+            }))}
           </div>
         </div>
         <div className="go-back">
