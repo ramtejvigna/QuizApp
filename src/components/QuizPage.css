@@ -82,3 +82,12 @@
 .question-container {
     margin: 40px 60px;
 }
+.question-container .results {
+  margin-top: 20px;
+  padding: 30px;
+  background: transparent;
+  backdrop-filter: blur(20px);
+  font-size: 20px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}

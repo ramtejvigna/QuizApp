@@ -6,8 +6,9 @@ import Home from './components/Home.jsx'
 import Layout from './components/Layout.jsx'
 import QuizPage from './components/QuizPage.jsx'
 import App from './App.jsx'
-import Credentials from "./components/Credentials.jsx";
+import SignUp from "./components/SignUp.jsx";
 import QuizQuestions from "./components/QuizQuestions.jsx";
+import SignIn from "./components/SignIn.jsx";
 
 // const router = createBrowserRouter([
 //   {
@@ -32,7 +33,8 @@ const router = createBrowserRouter(
       <Route index element={<Home />} />
       <Route path='quiz' element={<QuizPage />} />
       <Route path="highScore" element={<App />}/>
-      <Route path="signin" element={<Credentials />}/>
+      <Route path="signin" element={<SignIn />}/>
+      <Route path='signup' element={<SignUp />} />
       <Route path='/quizzes/:categoryId' element={<QuizQuestions />} />
     </Route>
   )
