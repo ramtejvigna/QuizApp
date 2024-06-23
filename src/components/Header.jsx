@@ -1,6 +1,6 @@
 import React from "react";
 import "../index.css";
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 export default function Header() {
   return (
     <>
@@ -42,7 +42,11 @@ export default function Header() {
                 Quiz
               </NavLink>
             </li>
-            <button>Sign In</button>
+            <Link to='/signin'>
+                <button>
+                  Signin
+                </button>
+            </Link>
           </div>
         </nav>
       </header>

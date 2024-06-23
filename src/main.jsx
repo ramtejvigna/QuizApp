@@ -5,7 +5,8 @@ import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } 
 import Home from './components/Home.jsx'
 import Layout from './components/Layout.jsx'
 import QuizPage from './components/QuizPage.jsx'
-import HighScore from './components/HighScore.jsx'
+import App from './App.jsx'
+import Credentials from "./components/Credentials.jsx";
 import QuizQuestions from "./components/QuizQuestions.jsx";
 
 // const router = createBrowserRouter([
@@ -30,7 +31,8 @@ const router = createBrowserRouter(
     <Route path='/' element={<Layout />} >
       <Route index element={<Home />} />
       <Route path='quiz' element={<QuizPage />} />
-      <Route path="highScore" element={<HighScore />}/>
+      <Route path="highScore" element={<App />}/>
+      <Route path="signin" element={<Credentials />}/>
       <Route path='/quizzes/:categoryId' element={<QuizQuestions />} />
     </Route>
   )
