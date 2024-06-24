@@ -9,10 +9,13 @@ import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 export default function SignIn() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const navigate = useNavigate();
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -20,6 +23,11 @@ export default function SignIn() {
       email: email,
       password: password,
     });
+    axios.post("http://localhost:3001/signin", {email, password})
+      .then(result => {console.log(result);
+        navigate('/');
+      })
+      .catch(err => console.log(err));
   };
 
   return (

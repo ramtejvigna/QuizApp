@@ -9,6 +9,7 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
 import { useState } from "react";
+import axios from 'axios';
 
 export default function SignUp() {
   const [firstName, setfirstName] = useState("");
@@ -18,12 +19,11 @@ export default function SignUp() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    console.log({
-      firstName: firstName,
-      lastName: lastName,
-      email: email,
-      password: password,
-    });
+
+    axios.post('http://localhost:3001/signup',{firstName, lastName, email, password})
+      .then(result => console.log(result))
+      .catch((err) => console.log(err));
+
     setfirstName(""); setLastName(""); setEmail(""); setPassword("");
   };
 
